@@ -1,45 +1,32 @@
-
 <?php
-require_once('template_header.php');
+    require_once("template_header.php");
+    require_once("template_menu.php");
+    $currentPageId = 'accueil';
+    if(isset($_GET['page'])) {
+
+        $currentPageId = $_GET['page'];
+    }
 ?>
 
+<header class="bandeau_haut">
 
-<h1>Accueil</h1>
+    <h1 class="titre">$currentPageId</h1>
+</header>
 
 <?php
-require_once('template_menu.php');
-renderMenuToHTML('index');
+    renderMenuToHTML($currentPageId);
 ?>
-<div>
-    <h1>Text Fields</h1>
-    <form>
-        First name: <input type="text" name="firstname"><br>
-        Last name: <input type="text" name="lastname">
-    </form>
-    <h2>Password</h2>
-    <form>
-        Password: <input type="password" name="pwd">
-    </form>
-    <h3>Radio Buttons</h3>
-    <form>
-        <input type="radio" name="sex" value="male">Male<br>
-        <input type="radio" name="sex" value="female">Female
-    </form>
 
-    <h4>Checkboxes</h4>
-    <form>
-        <input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
-        <input type="checkbox" name="vehicle" value="Car">I have a car
-    </form>
+<section class="corps">
 
-    <h5>Submit Button</h5>
-    <form name="input" action="cv.html" method="get">
-        Username: <input type="text" name="user">
-        <input type="submit" value="Submit">
-    </form>
-</div>
-
-
+    <?php
+        $pageToInclude = $currentPageId . ".php";
+        if(is_readable($pageToInclude))
+            require_once($pageToInclude);
+        else
+            require_once("error.php");
+    ?>
+</section>
 <?php
-require_once('template_footer.php');
+require_once("template_footer.php");
 ?>

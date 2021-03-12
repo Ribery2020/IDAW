@@ -6,11 +6,11 @@ require_once('template_header.php');
     
 <h1>CV</h1>
 
-<?php
+<!-- <?php
 require_once('template_menu.php');
-renderMenuToHTML('cv');
+ renderMenuToHTML('cv');
 
-?>
+?> -->
 <div>
 
     <table  width="800" align="center">

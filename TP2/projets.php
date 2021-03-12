@@ -6,10 +6,10 @@ require_once('template_header.php');
 
 <h1>projets</h1>
 
-<?php
+<!-- <?php
 require_once('template_menu.php');
 renderMenuToHTML('projets');
-?>
+?> -->
 
 
 <div style="text-align:center">
