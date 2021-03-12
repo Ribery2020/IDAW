@@ -15,6 +15,7 @@ function renderMenuToHTML($currentPageId) {
             echo "<li><a id='currentpage' href='http://localhost/TP2/index.php?page=" . $pageId . "'>" . $pageParameters[0] . "</a></li>";
         } else {
             echo "<li><a href='http://localhost/TP2/index.php?page=" . $pageId . "'>" . $pageParameters[0] . "</a></li>";
+           // echo "<li><a href ='$pageId.php'><span>$pageParameters[0]</span></a></li>";
         }
     }
     echo "</ul>";

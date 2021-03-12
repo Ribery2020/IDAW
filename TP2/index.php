@@ -10,7 +10,7 @@
 
 <header class="bandeau_haut">
 
-    <h1 class="titre">$currentPageId</h1>
+    <h1 class="titre">IDAW</h1>
 </header>
 
 <?php
