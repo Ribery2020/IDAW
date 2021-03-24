@@ -1,0 +1,28 @@
+<script language="javascript">
+    function chk()
+    {
+        setTimeout("chk()",100);
+        text1.innerHTML = form1.t1.value;
+        text2.innerHTML = form1.t2.value;
+        text3.innerHTML = form1.t3.value;
+    }
+</script>
+<body onload="chk()">
+<form name="form1">
+    <textarea name="t1"></textarea><br />
+    <textarea name="t2"></textarea><br />
+    <textarea name="t3"></textarea><br />
+    <input type="button" value="submit" onclick="chk()">
+</form>
+<table border="1" width="200" style="border-collapse: collapse" bordercolor="#008000">
+    <tr height="100px">
+        <td id="text1"></td>
+    </tr>
+    <tr height="100px">
+        <td id="text2"></td>
+    </tr>
+    <tr height="100px">
+        <td id="text3"></td>
+    </tr>
+</table>
+</body>
