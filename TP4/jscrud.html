@@ -15,6 +15,7 @@
       }
     </style>
   </head>
+
 <body>
   <table class="table"> 
     <thead>
@@ -30,6 +31,7 @@
   <tbody id="studentsTableBody">
   </tbody>
   </table>
+
   <form id="addStudentForm" action="" onsubmit="onFormSubmit();">
     <div class="form-group row">
       <label for="inputNom" class="col-sm-2 col-form-label">Nom*</label>
@@ -37,28 +39,32 @@
         <input type="text" class="form-control" id="inputNom" >
     </div>
   </div>
+
   <div class="form-group row">
-    <label for="inputNom" class="col-sm-2 col-form-label">Prenom</label>
+    <label for="inputPrenom" class="col-sm-2 col-form-label">Prenom</label>
     <div class="col-sm-3">
-      <input type="text" class="form-control" id="inputNom" >
+      <input type="text" class="form-control" id="inputPrenom" >
   </div>
 </div>
+
 <div class="form-group row">
-  <label for="inputNom" class="col-sm-2 col-form-label">Date de naissance</label>
+  <label for="inputNaissance" class="col-sm-2 col-form-label">Date de naissance</label>
   <div class="col-sm-3">
-    <input type="text" class="form-control" id="inputNom" >
+    <input type="text" class="form-control" id="inputNaissance" >
 </div>
 </div>
+
 <div class="form-group row">
   <label for="inputNom" class="col-sm-2 col-form-label">Aime le cours Web</label>
-  <div class="col-sm-3">
-    <input type="text" class="form-control" id="inputNom" >
+
+    <input type="checkbox" id="inputAime" name="sex" value="J'adore">
+
 </div>
-</div>
+
 <div class="form-group row">
-  <label for="inputNom" class="col-sm-2 col-form-label">Remarques </label>
+  <label for="inputRemarques" class="col-sm-2 col-form-label">Remarques </label>
   <div class="col-sm-3">
-    <input type="text" class="form-control" id="inputNom" >
+    <input type="text" class="form-control" id="inputRemarques" >
 </div>
 </div>
 ...
@@ -74,7 +80,14 @@
   // prevent the form to be sent to the server
   event.preventDefault();
   let nom = $("#inputNom").val();
-  $("#studentsTableBody").append(`<tr><td>${nom}</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>`)}
+  let Prenom = $("#inputPrenom").val();
+  let Naissance = $("#inputNaissance").val();
+  let Aime = $("#inputAime").val();
+  let Remarques = $("#inputRemarques").val();
+
+  $("#studentsTableBody").append(`<tr><td>${nom}</td><td>${Prenom}</td><td>${Naissance}</td><td>${Aime}</td><td>${Remarques}</td><td></td><td></td></tr>`)
+  
+  }
 </script>
 </body>
 </html>
